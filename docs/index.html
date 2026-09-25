@@ -37,7 +37,7 @@
       <p>Shorts Factory uses TikTok's <strong>Login Kit</strong> to ask the account owner for permission and the <strong>Content Posting API</strong> to publish videos.</p>
       <ul>
         <li>The account owner signs in on TikTok's own authorization page and approves access. Shorts Factory never sees the TikTok password.</li>
-        <li>The only permission requested is <code>video.publish</code>, which allows Shorts Factory to post videos to the authorizing account.</li>
+        <li>Two permissions are requested: <code>user.info.basic</code>, to show the connected account's display name and avatar, and <code>video.publish</code>, to post videos to that account.</li>
         <li>Before each post, Shorts Factory asks TikTok for the creator's display name, username, profile photo and available posting options, so the Publisher can show which account the video will be posted to and offer only the settings TikTok allows. This information is displayed, not stored.</li>
         <li>Every post is made only when the creator clicks <em>Post to TikTok</em>. Nothing is posted automatically, and no visibility setting is pre-selected.</li>
         <li>Shorts Factory does not read the account's followers, messages, likes or existing videos.</li>

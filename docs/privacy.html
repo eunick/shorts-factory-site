@@ -40,7 +40,8 @@
         <tbody>
           <tr><td>Access token</td><td>Authenticates requests to TikTok's Content Posting API to publish videos.</td><td>Yes, locally (see section 4).</td></tr>
           <tr><td>Refresh token</td><td>Gets a new access token when the current one expires, so the owner doesn't have to re-authorize every day.</td><td>Yes, locally.</td></tr>
-          <tr><td>Open ID (TikTok's app-specific account identifier)</td><td>Shown once on screen after authorization to confirm which account was connected.</td><td>No.</td></tr>
+          <tr><td>Open ID (TikTok's app-specific account identifier)</td><td>Included in TikTok's standard token response. Not used.</td><td>No.</td></tr>
+          <tr><td>Basic profile info: display name and avatar (<code>user.info.basic</code>)</td><td>Shown on the Publisher page as "Connected as …" so the creator can confirm which account is connected.</td><td>No. Displayed only.</td></tr>
           <tr><td>Token expiry time and granted scopes</td><td>Part of TikTok's standard token response.</td><td>No.</td></tr>
           <tr><td>Creator info: display name, username, profile photo URL, available privacy options, whether comments/Duet/Stitch are turned off, maximum video length</td><td>Requested from TikTok when the Publisher is opened and again just before each post, to show which account the video will be posted to and to offer only the settings TikTok allows.</td><td>No. Displayed on the Publisher page only.</td></tr>
         </tbody>
@@ -49,7 +50,7 @@
     <p>When a video is published, TikTok returns a <strong>publish ID</strong> and a <strong>publishing status</strong> (for example, "complete" or a failure reason). The app records the publish ID, status and time in local log files so the same video is not uploaded twice and failures can be retried.</p>
 
     <h3>TikTok data the app does not access</h3>
-    <p>Shorts Factory requests only the <code>video.publish</code> permission. Apart from the creator info listed above, it does not request or access the account's follower or following lists, direct messages, comments, likes, watch history, analytics, or existing videos.</p>
+    <p>Shorts Factory requests only the <code>user.info.basic</code> and <code>video.publish</code> permissions. Apart from the basic profile info and creator info listed above, it does not request or access the account's follower or following lists, direct messages, comments, likes, watch history, analytics, or existing videos.</p>
 
     <h2>3. Information sent to TikTok</h2>
     <p>When a video is published, the app sends TikTok:</p>
