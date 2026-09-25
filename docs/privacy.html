@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy · Shorts Factory</title>
+  <meta name="description" content="How Shorts Factory handles data, including data received through TikTok Login Kit and the Content Posting API.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="inner">
+      <a class="brand" href="./">Shorts Factory</a>
+      <nav>
+        <a href="./">Home</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html" aria-current="page">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective date: September 25, 2026</p>
+
+    <p>This Privacy Policy explains what information Shorts Factory ("the app") handles and how. Shorts Factory is an independent project developed and operated by Derrick Caluag ("I", "me"). Questions can be sent to <a href="mailto:derrick.caluag@gmail.com">derrick.caluag@gmail.com</a>.</p>
+
+    <div class="note">
+      <strong>In short:</strong> Shorts Factory runs on my own computer. It connects to a TikTok account only when the account owner authorizes it, and it uses that connection only to publish videos. It does not read profile information, followers, messages or existing videos, does not sell or share data, and has no server, user accounts, cookies or analytics.
+    </div>
+
+    <h2>1. How the app works</h2>
+    <p>Shorts Factory is a desktop program that produces short educational videos and, when I run its upload command, publishes a finished video to a connected TikTok account through TikTok's Content Posting API. It is not a hosted web service: all processing and storage happens locally on the computer where the app is installed.</p>
+
+    <h2>2. Information received from TikTok</h2>
+    <p>When a TikTok account owner authorizes Shorts Factory through TikTok Login Kit, TikTok's authorization page handles the sign-in. Shorts Factory never receives the TikTok username or password. After authorization, TikTok returns the following to the app:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Data</th><th>Purpose</th><th>Stored?</th></tr></thead>
+        <tbody>
+          <tr><td>Access token</td><td>Authenticates requests to TikTok's Content Posting API to publish videos.</td><td>Yes, locally (see section 4).</td></tr>
+          <tr><td>Refresh token</td><td>Gets a new access token when the current one expires, so the owner doesn't have to re-authorize every day.</td><td>Yes, locally.</td></tr>
+          <tr><td>Open ID (TikTok's app-specific account identifier)</td><td>Shown once on screen after authorization to confirm which account was connected.</td><td>No.</td></tr>
+          <tr><td>Token expiry time and granted scopes</td><td>Part of TikTok's standard token response.</td><td>No.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>When a video is published, TikTok returns a <strong>publish ID</strong> and a <strong>publishing status</strong> (for example, "complete" or a failure reason). The app records the publish ID, status and time in local log files so the same video is not uploaded twice and failures can be retried.</p>
+
+    <h3>TikTok data the app does not access</h3>
+    <p>Shorts Factory requests only the <code>video.publish</code> permission. It does not request or access the account's profile details, follower or following lists, direct messages, comments, likes, watch history, analytics, or existing videos.</p>
+
+    <h2>3. Information sent to TikTok</h2>
+    <p>When a video is published, the app sends TikTok:</p>
+    <ul>
+      <li>the video file produced by Shorts Factory;</li>
+      <li>the caption and hashtags written for that video;</li>
+      <li>the post settings (who can view the post, and whether comments, Duet and Stitch are allowed).</li>
+    </ul>
+    <p>TikTok's handling of this content is governed by TikTok's own Terms of Service and Privacy Policy.</p>
+
+    <h2>4. Where data is stored and how it is protected</h2>
+    <ul>
+      <li>TikTok access and refresh tokens, and the app's TikTok client credentials, are stored in a configuration file on the local computer that runs Shorts Factory. This file is not uploaded to any website, repository or cloud service.</li>
+      <li>Upload logs (video name, platform, date and time, result, publish ID) are stored as local files on the same computer.</li>
+      <li>Communication with TikTok uses HTTPS.</li>
+      <li>The computer is protected by the operating system's user account controls. No method of storage is perfectly secure, but TikTok data is never stored on a server or shared.</li>
+    </ul>
+
+    <h2>5. How data is used</h2>
+    <p>Data received from TikTok is used only to publish videos to the account that authorized the app and to check whether publishing succeeded. It is not used for advertising, profiling, analytics or any other purpose.</p>
+
+    <h2>6. Sharing and selling</h2>
+    <p>I do not sell, rent or share TikTok data or tokens with anyone. TikTok data is not sent to any service other than TikTok.</p>
+    <p>Shorts Factory can also publish the same videos to YouTube, Instagram and Facebook using those platforms' own separate authorizations. TikTok tokens and TikTok data are never sent to those platforms, and data from those platforms is never sent to TikTok.</p>
+
+    <h2>7. Other information</h2>
+    <ul>
+      <li><strong>No user accounts.</strong> Shorts Factory has no sign-up, login system or user database of its own.</li>
+      <li><strong>No cookies or analytics.</strong> Neither the app nor this website sets cookies or uses analytics or tracking tools.</li>
+      <li><strong>Video content.</strong> Scripts, narration and visuals are generated by AI models running on the local computer. They are not made from personal information.</li>
+      <li><strong>This website.</strong> This site is hosted by GitHub Pages. GitHub may collect technical information such as IP addresses when you visit, as described in GitHub's own privacy statement. I do not receive or use that information.</li>
+    </ul>
+
+    <h2>8. Retention and deletion</h2>
+    <ul>
+      <li>Tokens are kept until the TikTok connection is revoked, the tokens are replaced by a new authorization, or they are deleted from the local configuration file. Once revoked in TikTok, stored tokens no longer work.</li>
+      <li>Upload logs are kept locally until deleted, so that videos are not uploaded twice.</li>
+      <li>To delete TikTok tokens and upload records related to your account, email <a href="mailto:derrick.caluag@gmail.com">derrick.caluag@gmail.com</a>. I will delete them and confirm within 30 days.</li>
+    </ul>
+
+    <h2>9. Your choices and rights</h2>
+    <ul>
+      <li><strong>Revoke access:</strong> you can remove Shorts Factory's access at any time from the apps and services connected to your account in TikTok's settings. The app will then stop being able to post to your account.</li>
+      <li><strong>Access or deletion:</strong> you can ask what data related to your TikTok account the app holds, or ask for it to be deleted, by emailing me.</li>
+      <li>Depending on where you live, you may have additional rights under local data protection laws. Contact me to exercise them.</li>
+    </ul>
+
+    <h2>10. Children</h2>
+    <p>Shorts Factory is not directed at children and does not knowingly process data from anyone under the minimum age required to hold a TikTok account.</p>
+
+    <h2>11. Changes to this policy</h2>
+    <p>If the way Shorts Factory handles data changes, I will update this page and its effective date before the change takes effect. If the app starts requesting additional TikTok permissions, this policy will be updated to describe them first.</p>
+
+    <h2>12. Contact</h2>
+    <p>Derrick Caluag<br>Email: <a href="mailto:derrick.caluag@gmail.com">derrick.caluag@gmail.com</a></p>
+  </main>
+
+  <footer class="site">
+    <div class="inner">
+      <a href="./">Home</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a>
+      <p>&copy; 2026 Derrick Caluag</p>
+    </div>
+  </footer>
+</body>
+</html>

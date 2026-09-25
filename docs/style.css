@@ -1,0 +1,121 @@
+:root {
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --text: #1c1917;
+  --muted: #57534e;
+  --border: #e7e5e4;
+  --accent: #0f766e;
+  --accent-soft: #ccfbf1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0a09;
+    --surface: #1c1917;
+    --text: #f5f5f4;
+    --muted: #a8a29e;
+    --border: #292524;
+    --accent: #5eead4;
+    --accent-soft: #134e4a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+a { color: var(--accent); }
+
+header.site {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+header.site .inner,
+main,
+footer.site .inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header.site .inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+nav a {
+  margin-left: 18px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+nav a:first-child { margin-left: 0; }
+nav a[aria-current="page"] { font-weight: 600; text-decoration: underline; }
+
+main { padding-top: 32px; padding-bottom: 48px; }
+
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; }
+h2 { font-size: 1.3rem; margin: 36px 0 8px; }
+h3 { font-size: 1.05rem; margin: 24px 0 4px; }
+
+.lead { font-size: 1.15rem; color: var(--muted); margin-top: 0; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+.note {
+  background: var(--accent-soft);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+ol.steps { padding-left: 1.3em; }
+ol.steps li { margin-bottom: 8px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin: 12px 0;
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+th { color: var(--muted); font-weight: 600; }
+.table-wrap { overflow-x: auto; }
+
+footer.site {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+footer.site .inner { padding-top: 20px; padding-bottom: 28px; }
+footer.site a { margin-right: 16px; }
