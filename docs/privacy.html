@@ -21,16 +21,16 @@
 
   <main>
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective date: September 25, 2026</p>
+    <p class="meta">Effective date: September 25, 2026 (updated September 25, 2026)</p>
 
     <p>This Privacy Policy explains what information Shorts Factory ("the app") handles and how. Shorts Factory is an independent project developed and operated by Derrick Caluag ("I", "me"). Questions can be sent to <a href="mailto:derrick.caluag@gmail.com">derrick.caluag@gmail.com</a>.</p>
 
     <div class="note">
-      <strong>In short:</strong> Shorts Factory runs on my own computer. It connects to a TikTok account only when the account owner authorizes it, and it uses that connection only to publish videos. It does not read profile information, followers, messages or existing videos, does not sell or share data, and has no server, user accounts, cookies or analytics.
+      <strong>In short:</strong> Shorts Factory runs on my own computer. It connects to a TikTok account only when the account owner authorizes it, and it uses that connection only to publish videos the creator chooses. It shows the creator's TikTok name and profile photo while publishing but does not store them. It does not read followers, messages or existing videos, does not sell or share data, and uses no cookies or analytics.
     </div>
 
     <h2>1. How the app works</h2>
-    <p>Shorts Factory is a desktop program that produces short educational videos and, when I run its upload command, publishes a finished video to a connected TikTok account through TikTok's Content Posting API. It is not a hosted web service: all processing and storage happens locally on the computer where the app is installed.</p>
+    <p>Shorts Factory is a program that produces short educational videos on my computer. Its Publisher, a password-protected page at eunick.duckdns.org/app/ served from the same computer, lets the connected creator choose a finished video, review it and publish it to TikTok through TikTok's Content Posting API. All processing and storage happens on that computer; there is no third-party hosting of app data.</p>
 
     <h2>2. Information received from TikTok</h2>
     <p>When a TikTok account owner authorizes Shorts Factory through TikTok Login Kit, TikTok's authorization page handles the sign-in. Shorts Factory never receives the TikTok username or password. After authorization, TikTok returns the following to the app:</p>
@@ -42,20 +42,21 @@
           <tr><td>Refresh token</td><td>Gets a new access token when the current one expires, so the owner doesn't have to re-authorize every day.</td><td>Yes, locally.</td></tr>
           <tr><td>Open ID (TikTok's app-specific account identifier)</td><td>Shown once on screen after authorization to confirm which account was connected.</td><td>No.</td></tr>
           <tr><td>Token expiry time and granted scopes</td><td>Part of TikTok's standard token response.</td><td>No.</td></tr>
+          <tr><td>Creator info: display name, username, profile photo URL, available privacy options, whether comments/Duet/Stitch are turned off, maximum video length</td><td>Requested from TikTok when the Publisher is opened and again just before each post, to show which account the video will be posted to and to offer only the settings TikTok allows.</td><td>No. Displayed on the Publisher page only.</td></tr>
         </tbody>
       </table>
     </div>
     <p>When a video is published, TikTok returns a <strong>publish ID</strong> and a <strong>publishing status</strong> (for example, "complete" or a failure reason). The app records the publish ID, status and time in local log files so the same video is not uploaded twice and failures can be retried.</p>
 
     <h3>TikTok data the app does not access</h3>
-    <p>Shorts Factory requests only the <code>video.publish</code> permission. It does not request or access the account's profile details, follower or following lists, direct messages, comments, likes, watch history, analytics, or existing videos.</p>
+    <p>Shorts Factory requests only the <code>video.publish</code> permission. Apart from the creator info listed above, it does not request or access the account's follower or following lists, direct messages, comments, likes, watch history, analytics, or existing videos.</p>
 
     <h2>3. Information sent to TikTok</h2>
     <p>When a video is published, the app sends TikTok:</p>
     <ul>
       <li>the video file produced by Shorts Factory;</li>
       <li>the caption and hashtags written for that video;</li>
-      <li>the post settings (who can view the post, and whether comments, Duet and Stitch are allowed).</li>
+      <li>the post settings the creator selected: who can view the post; whether comments, Duet and Stitch are allowed; any commercial content disclosure; and whether the video is labeled as AI-generated.</li>
     </ul>
     <p>TikTok's handling of this content is governed by TikTok's own Terms of Service and Privacy Policy.</p>
 
@@ -91,7 +92,7 @@
 
     <h2>9. Your choices and rights</h2>
     <ul>
-      <li><strong>Revoke access:</strong> you can remove Shorts Factory's access at any time from the apps and services connected to your account in TikTok's settings. The app will then stop being able to post to your account.</li>
+      <li><strong>Revoke access:</strong> click <em>Disconnect</em> in the Publisher to revoke Shorts Factory's access with TikTok and delete the stored tokens immediately, or remove the app from the apps and services connected to your account in TikTok's settings. The app will then stop being able to post to your account.</li>
       <li><strong>Access or deletion:</strong> you can ask what data related to your TikTok account the app holds, or ask for it to be deleted, by emailing me.</li>
       <li>Depending on where you live, you may have additional rights under local data protection laws. Contact me to exercise them.</li>
     </ul>

@@ -29,7 +29,7 @@
       <li><strong>Writes a script:</strong> a short narration and shot list about a single fact, written by a locally hosted language model.</li>
       <li><strong>Generates media:</strong> animated visuals and a narration voice track, created with AI models running on the same computer.</li>
       <li><strong>Assembles the video:</strong> combines the clips, narration and burned-in captions into a 9:16 video of 45 to 60 seconds, and writes a suggested caption and hashtags.</li>
-      <li><strong>Publishes on request:</strong> when the operator runs the upload command for a finished video, Shorts Factory sends that video and its caption to TikTok.</li>
+      <li><strong>Publishes on request:</strong> in the Shorts Factory Publisher (a password-protected page on this site), the creator picks a finished video, reviews the preview and caption, chooses who can view it and which interactions to allow, and clicks <em>Post to TikTok</em>.</li>
     </ol>
 
     <h2>How the TikTok integration works</h2>
@@ -38,9 +38,11 @@
       <ul>
         <li>The account owner signs in on TikTok's own authorization page and approves access. Shorts Factory never sees the TikTok password.</li>
         <li>The only permission requested is <code>video.publish</code>, which allows Shorts Factory to post videos to the authorizing account.</li>
-        <li>Shorts Factory does not read the account's profile, followers, messages, likes or existing videos.</li>
+        <li>Before each post, Shorts Factory asks TikTok for the creator's display name, username, profile photo and available posting options, so the Publisher can show which account the video will be posted to and offer only the settings TikTok allows. This information is displayed, not stored.</li>
+        <li>Every post is made only when the creator clicks <em>Post to TikTok</em>. Nothing is posted automatically, and no visibility setting is pre-selected.</li>
+        <li>Shorts Factory does not read the account's followers, messages, likes or existing videos.</li>
         <li>Access tokens are stored only on the operator's computer and are used only to call TikTok's API.</li>
-        <li>Access can be revoked at any time from the connected apps settings in TikTok.</li>
+        <li>Access can be removed at any time with the <em>Disconnect</em> button in the Publisher, which revokes it with TikTok and deletes the stored tokens, or from the connected apps settings in TikTok.</li>
       </ul>
     </div>
 
